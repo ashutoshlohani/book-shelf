@@ -21,5 +21,8 @@ font-family: 'Satoshi-BlackItalic'; */
 
 body {
    font-family: 'Satoshi';
-   background-color: rgb(224, 224, 224);
+   background-image: url('./images/bg-img.jpg');
+   background-size: 100vh;
+   background-size: cover;
+   box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.325);
 }
