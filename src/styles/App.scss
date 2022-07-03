@@ -1,0 +1,22 @@
+.landing-page {
+   display: grid;
+   height: 100vh;
+   grid-template-columns: 1fr 1fr;
+   justify-items: stretch;
+   align-items: stretch;
+}
+
+.left-side {
+   margin: auto;
+}
+
+.right-side {
+   margin: auto;
+}
+
+.form-container {
+   background-color: white;
+   height: 36rem;
+   width: 28rem;
+   border-radius: 10px;
+}

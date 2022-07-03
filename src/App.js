@@ -1,4 +1,5 @@
 import * as React from 'react';
+import './styles/App.scss';
 
 function Form({ onSubmit, buttonText }) {
    function handleSubmit(event) {
@@ -34,7 +35,7 @@ function LoginForm({ changeState }) {
    }
 
    return (
-      <div className='login-form-container'>
+      <div className='form-container'>
          <h1>Sign in</h1>
          <h3>
             New user?
@@ -55,7 +56,7 @@ function RegisterForm({ changeState }) {
    }
 
    return (
-      <div className='register-form-container'>
+      <div className='form-container'>
          <h1>Create an account</h1>
          <h3>
             Already a user?
