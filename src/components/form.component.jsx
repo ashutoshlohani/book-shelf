@@ -1,5 +1,7 @@
 import React from 'react';
 import { FaSpinner } from 'react-icons/fa';
+import '../styles/form.styles.scss';
+import '../styles/spinner.styles.scss';
 
 function Form({ onSubmit, buttonText }) {
    const [visible, setVisible] = React.useState(false);

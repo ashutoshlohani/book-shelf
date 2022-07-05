@@ -1,5 +1,8 @@
-@import url('./styles/satoshi.fonts.scss');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+@import url('./styles/satoshi.fonts.scss');
 /* font-family: 'Satoshi-Variable';
 font-family: 'Satoshi-VariableItalic';
 font-family: 'Satoshi-Light';
@@ -21,8 +24,4 @@ font-family: 'Satoshi-BlackItalic'; */
 
 body {
    font-family: 'Satoshi';
-   background-image: url('./images/bg-img.jpg');
-   background-size: 100vh;
-   background-size: cover;
-   box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.325);
 }

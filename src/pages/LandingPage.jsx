@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { LoginForm, RegisterForm } from '../components/form.component';
 import '../styles/landingPage.styles.scss';
-import '../styles/form.styles.scss';
 
 function App() {
    const [state, setState] = React.useState('login');

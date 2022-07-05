@@ -1,0 +1,18 @@
+.spinner {
+   margin-left: 0.5rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+   .spinner {
+      animation: spinner infinite 1s linear;
+   }
+}
+
+@keyframes spinner {
+   from {
+      transform: rotate(0deg);
+   }
+   to {
+      transform: rotate(360deg);
+   }
+}
