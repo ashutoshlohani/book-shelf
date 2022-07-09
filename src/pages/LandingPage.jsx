@@ -2,7 +2,7 @@ import * as React from 'react';
 import { LoginForm, RegisterForm } from '../components/form.component';
 import '../styles/landingPage.styles.scss';
 
-function App() {
+function LandingPage() {
    const [state, setState] = React.useState('login');
 
    return (
@@ -25,4 +25,4 @@ function App() {
    );
 }
 
-export default App;
+export default LandingPage;

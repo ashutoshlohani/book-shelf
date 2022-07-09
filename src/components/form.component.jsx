@@ -1,7 +1,7 @@
 import React from 'react';
 import {
    signInUserWithEmail,
-   // signInUserWithGooglePopup,
+   signInUserWithGooglePopup,
    registerUserWithEmail,
 } from '../utils/firebase.config';
 import { FaSpinner } from 'react-icons/fa';
@@ -50,7 +50,6 @@ export function LoginForm({ changeState }) {
       const { email, password } = formData;
       try {
          await signInUserWithEmail(email, password);
-         alert('🔥logged in');
       } catch (error) {
          console.log(`error: ${error}`);
          if (error.code === 'auth/user-not-found') {
@@ -61,6 +60,10 @@ export function LoginForm({ changeState }) {
             console.error(error);
          }
       }
+   }
+
+   async function handleSignInWithGoogle() {
+      await signInUserWithGooglePopup();
    }
 
    return (
@@ -83,7 +86,7 @@ export function LoginForm({ changeState }) {
             </div>
 
             <div>
-               <button>
+               <button onClick={handleSignInWithGoogle}>
                   <img
                      alt='google'
                      src='https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-suite-everything-you-need-know-about-google-newest-0.png'
@@ -101,7 +104,6 @@ export function RegisterForm({ changeState }) {
       const { email, password } = formData;
       try {
          await registerUserWithEmail(email, password);
-         console.log('🔥registered');
       } catch (error) {
          if (error.code === 'auth/email-already-in-use') {
             alert('Email already in use! Please try again with another email.');
@@ -111,6 +113,10 @@ export function RegisterForm({ changeState }) {
             console.error(error);
          }
       }
+   }
+
+   async function handleSignInWithGoogle() {
+      await signInUserWithGooglePopup();
    }
 
    return (
@@ -132,7 +138,7 @@ export function RegisterForm({ changeState }) {
                <hr />
             </div>
             <div>
-               <button>
+               <button onClick={handleSignInWithGoogle}>
                   <img
                      alt='google'
                      src='https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-suite-everything-you-need-know-about-google-newest-0.png'

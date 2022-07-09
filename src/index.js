@@ -1,14 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './pages/LandingPage';
-// import Discover from './pages/discoverBooks';
+import App from './App';
+
+import { UserProvider } from './context/userAuth.context';
+
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
    <React.StrictMode>
-      <App />
+      <UserProvider>
+         <App />
+      </UserProvider>
    </React.StrictMode>
 );
 

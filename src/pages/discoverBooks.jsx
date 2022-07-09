@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { signOutUser } from '../utils/firebase.config';
 import { client } from '../utils/api-client';
 
 import BookCard from '../components/book-card.component';
@@ -41,6 +42,7 @@ const Discover = () => {
 
    return (
       <>
+         <button onClick={signOutUser}>Log out</button>
          <SearchBar handleSubmit={handleSubmit} isLoading={isLoading} isError={isError} />
 
          {isError ? (
