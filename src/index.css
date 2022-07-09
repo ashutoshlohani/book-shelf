@@ -1,6 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* @tailwind base; */
+/* @tailwind components; */
+/* @tailwind utilities; */
 
 @import url('./styles/satoshi.fonts.scss');
 /* font-family: 'Satoshi-Variable';
