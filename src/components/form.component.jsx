@@ -1,4 +1,9 @@
 import React from 'react';
+import {
+   signInUserWithEmail,
+   // signInUserWithGooglePopup,
+   registerUserWithEmail,
+} from '../utils/firebase.config';
 import { FaSpinner } from 'react-icons/fa';
 import '../styles/form.styles.scss';
 import '../styles/spinner.styles.scss';
@@ -8,10 +13,10 @@ function Form({ onSubmit, buttonText }) {
 
    function handleSubmit(event) {
       event.preventDefault();
-      const { username, password } = event.target.elements;
+      const { email, password } = event.target.elements;
 
       onSubmit({
-         username: username.value,
+         email: email.value,
          password: password.value,
       });
 
@@ -21,14 +26,14 @@ function Form({ onSubmit, buttonText }) {
    return (
       <form onSubmit={handleSubmit}>
          <div className='input-container'>
-            <label htmlFor='username'>Username</label>
+            <label htmlFor='email'>Email</label>
             <br />
-            <input id='username' />
+            <input id='email' type='email' required />
          </div>
          <div className='input-container'>
             <label htmlFor='password'>Password</label>
             <br />
-            <input id='password' type='password' />
+            <input id='password' type='password' required />
          </div>
          <div className='button-container'>
             <button type='submit'>
@@ -41,8 +46,21 @@ function Form({ onSubmit, buttonText }) {
 }
 
 export function LoginForm({ changeState }) {
-   function login(formData) {
-      console.log('login', formData);
+   async function login(formData) {
+      const { email, password } = formData;
+      try {
+         await signInUserWithEmail(email, password);
+         alert('🔥logged in');
+      } catch (error) {
+         console.log(`error: ${error}`);
+         if (error.code === 'auth/user-not-found') {
+            alert('You are not registered with this email! Please register.');
+         } else if (error.code === 'auth/wrong-password') {
+            alert('Wrong password! Please enter correct password.');
+         } else {
+            console.error(error);
+         }
+      }
    }
 
    return (
@@ -79,8 +97,20 @@ export function LoginForm({ changeState }) {
 }
 
 export function RegisterForm({ changeState }) {
-   function register(formData) {
-      console.log('register', formData);
+   async function register(formData) {
+      const { email, password } = formData;
+      try {
+         await registerUserWithEmail(email, password);
+         console.log('🔥registered');
+      } catch (error) {
+         if (error.code === 'auth/email-already-in-use') {
+            alert('Email already in use! Please try again with another email.');
+         } else if (error.code === 'auth/weak-password') {
+            alert('Password should be at least 6 characters');
+         } else {
+            console.error(error);
+         }
+      }
    }
 
    return (
