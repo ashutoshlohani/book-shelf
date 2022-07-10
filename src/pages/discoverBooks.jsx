@@ -1,10 +1,8 @@
 import React from 'react';
-
-import { signOutUser } from '../utils/firebase.config';
 import { client } from '../utils/api-client';
-
 import BookCard from '../components/book-card.component';
 import SearchBar from '../components/search-bar.component';
+// import NavBar from '../components/navbar.component';
 
 const Discover = () => {
    const [status, setStatus] = React.useState('idle');
@@ -42,7 +40,6 @@ const Discover = () => {
 
    return (
       <>
-         <button onClick={signOutUser}>Log out</button>
          <SearchBar handleSubmit={handleSubmit} isLoading={isLoading} isError={isError} />
 
          {isError ? (

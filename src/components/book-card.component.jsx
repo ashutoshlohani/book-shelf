@@ -8,7 +8,7 @@ const BookCard = ({ booksData }) => {
             console.log(d);
             const BookName = d.volumeInfo.title;
             const Author = d.volumeInfo.authors ? d.volumeInfo.authors[0] : 'Author not avilable';
-            const Year = d.volumeInfo.publishedDate;
+            const Year = d.volumeInfo.publishedDate ? d.volumeInfo.publishedDate : '';
             const Description = d.volumeInfo.description
                ? d.volumeInfo.description
                : 'Description not avilable';
@@ -26,7 +26,7 @@ const BookCard = ({ booksData }) => {
                      </div>
                      <div className='author-and-year'>
                         <h3>{Author}</h3>
-                        <h4>{Year}</h4>
+                        <h4>{Year.slice(0, 4)}</h4>
                      </div>
                      <div className='desc'>
                         <p>{Description}</p>

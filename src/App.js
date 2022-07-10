@@ -1,15 +1,27 @@
 import * as React from 'react';
-// import { Routes, Route } from 'react-router-dom';
 import { UserAuthContext } from './context/userAuth.context';
+import { Routes, Route } from 'react-router-dom';
 
 import LandingPage from './pages/LandingPage';
+import NavBar from './components/navbar.component';
+
 import Discover from './pages/discoverBooks';
+import ReadingList from './pages/ReadingList';
+import FinishedBooks from './pages/FinishedBooks';
 
 function App() {
    const { currentUser } = React.useContext(UserAuthContext);
 
    if (currentUser) {
-      return <Discover />;
+      return (
+         <Routes>
+            <Route path='/' element={<NavBar />}>
+               <Route index element={<Discover />} />
+               <Route path='/readingList' element={<ReadingList />} />
+               <Route path='/finishedBooks' element={<FinishedBooks />} />
+            </Route>
+         </Routes>
+      );
    } else {
       return <LandingPage />;
    }

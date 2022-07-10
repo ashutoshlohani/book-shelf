@@ -1,6 +1,6 @@
-/* @tailwind base; */
-/* @tailwind components; */
-/* @tailwind utilities; */
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
 
 @import url('./styles/satoshi.fonts.scss');
 /* font-family: 'Satoshi-Variable';
@@ -24,4 +24,5 @@ font-family: 'Satoshi-BlackItalic'; */
 
 body {
    font-family: 'Satoshi';
+   background-color: rgb(247, 247, 247);
 }
