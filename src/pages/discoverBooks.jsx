@@ -2,7 +2,6 @@ import React from 'react';
 import { client } from '../utils/api-client';
 import BookCard from '../components/book-card.component';
 import SearchBar from '../components/search-bar.component';
-// import NavBar from '../components/navbar.component';
 
 const Discover = () => {
    const [status, setStatus] = React.useState('idle');

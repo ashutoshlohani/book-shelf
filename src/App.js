@@ -9,6 +9,8 @@ import Discover from './pages/discoverBooks';
 import ReadingList from './pages/ReadingList';
 import FinishedBooks from './pages/FinishedBooks';
 
+// import FullScreenLoder from './components/fullScreenLoader';
+
 function App() {
    const { currentUser } = React.useContext(UserAuthContext);
 

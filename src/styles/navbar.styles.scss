@@ -8,23 +8,24 @@
    top: 0;
    left: 0;
    z-index: 1000;
-
    display: flex;
    justify-content: space-between;
    align-items: center;
-
-   //    filter: blur(4px);
    -webkit-backdrop-filter: blur(8px);
    backdrop-filter: blur(8px);
 
    .logo {
       font-size: 2rem;
-      font-weight: 100;
-      color: rgb(87, 87, 87);
 
-      .logo-text {
-         color: rgb(57, 57, 57);
+      a {
+         color: rgb(84, 84, 84);
          font-weight: 600;
+         text-decoration: none;
+      }
+
+      span {
+         color: rgb(45, 45, 45);
+         font-weight: 200;
       }
    }
 
@@ -39,6 +40,7 @@
          margin: 0 1rem;
          font-size: 1.1rem;
          font-weight: 400;
+         text-decoration: none;
 
          &:hover {
             color: rgb(79, 149, 255);
