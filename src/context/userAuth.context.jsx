@@ -12,15 +12,16 @@ export const UserProvider = ({ children }) => {
    // const [userState, setUserState] = React.useState(null);
 
    const [currentUser, setCurrentUser] = React.useState(null);
-
-   const value = { currentUser, setCurrentUser };
+   // console.log(currentUser);
 
    React.useEffect(() => {
       const unsubscribe = onAuthStateChangedListner(user => {
-         setCurrentUser('authenticated');
+         setCurrentUser(user);
       });
       return unsubscribe;
    }, [currentUser]);
+
+   const value = { currentUser, setCurrentUser };
 
    return <UserAuthContext.Provider value={value}>{children}</UserAuthContext.Provider>;
 };

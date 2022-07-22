@@ -1,9 +1,17 @@
+import * as React from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import { signOutUser } from '../utils/firebase.config';
-import { HiOutlineLogout } from 'react-icons/hi';
+import { UserAuthContext } from '../context/userAuth.context';
+
 import '../styles/navbar.styles.scss';
 
 const NavBar = () => {
+   const { currentUser } = React.useContext(UserAuthContext);
+
+   const email = currentUser.email;
+   const userName = email.slice(0, email.indexOf('@'));
+   const userAvatar = `https://avatars.dicebear.com/api/gridy/${userName}.svg`;
+
    return (
       <>
          <div className='navbar'>
@@ -26,12 +34,14 @@ const NavBar = () => {
             </div>
             <div className='user'>
                <div className='user-details'>
-                  <div className='user-image'></div>
-                  <div className='user-name'>Lorem Ipsum</div>
+                  <div className='user-image'>
+                     <img alt='user avatar' src={userAvatar} />
+                  </div>
+                  <div className='user-name'>{userName}</div>
                </div>
                <div className='logout'>
                   <button onClick={signOutUser} className='logout-button'>
-                     Logout <span style={{ marginLeft: '0.5rem' }}>{<HiOutlineLogout />}</span>
+                     Log out
                   </button>
                </div>
             </div>

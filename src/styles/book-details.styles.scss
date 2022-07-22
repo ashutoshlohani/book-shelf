@@ -1,0 +1,10 @@
+.container {
+   display: grid;
+   grid-template-columns: 1fr 2fr;
+   justify-items: center;
+   align-items: center;
+   background-color: rgb(100, 148, 237);
+   margin-top: 5rem;
+   width: 100vw;
+   height: 90vh;
+}

@@ -1,11 +1,20 @@
+import * as React from 'react';
+// import BookDetails from './book-details.component';
+import { Link } from 'react-router-dom';
 import { BsBookmarkHeart } from 'react-icons/bs';
 import '../styles/book-card.styles.scss';
 
 const BookCard = ({ booksData }) => {
+   const [book, setBook] = React.useState(null);
+
+   function handleClick(book) {
+      console.log(book);
+      setBook(book);
+   }
+
    return (
       <div>
          {booksData.items.map(d => {
-            console.log(d);
             const BookName = d.volumeInfo.title;
             const Author = d.volumeInfo.authors ? d.volumeInfo.authors[0] : 'Author not avilable';
             const Year = d.volumeInfo.publishedDate ? d.volumeInfo.publishedDate : '';
@@ -16,9 +25,11 @@ const BookCard = ({ booksData }) => {
 
             return (
                <div key={d.id} className='card-body'>
-                  <div className='img-container'>
-                     <img alt='' src={Img} />
-                  </div>
+                  <Link to={`/book/${d.id}`} key={d.id}>
+                     <div className='img-container' onClick={() => handleClick(d)}>
+                        <img alt='' src={Img} />
+                     </div>
+                  </Link>
                   <div className='details-container'>
                      <div className='heading-container'>
                         <h1>{BookName}</h1>

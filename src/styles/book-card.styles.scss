@@ -17,7 +17,7 @@
       margin: auto;
 
       img {
-         width: 100%;
+         width: 70%;
          box-shadow: rgba(38, 57, 77, 0.785) 0px 20px 30px -10px;
          border-radius: 5px;
          cursor: pointer;
@@ -30,7 +30,7 @@
       justify-items: stretch;
       align-items: stretch;
       margin: 0 1rem;
-      cursor: pointer;
+      // cursor: pointer;
 
       .heading-container {
          display: flex;
@@ -40,13 +40,13 @@
          h1 {
             color: rgb(69, 69, 69);
             font-size: 1.5rem;
-            cursor: pointer;
          }
 
          .fav-icon {
             height: 1.2rem;
             width: 1.2rem;
             opacity: 0.7;
+            cursor: pointer;
 
             &:hover {
                opacity: 1;

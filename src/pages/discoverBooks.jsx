@@ -19,7 +19,7 @@ const Discover = () => {
          return;
       }
       setStatus('loading');
-      client(`/volumes?q=${encodeURIComponent(query)}&maxResults=10`).then(
+      client(`/volumes?q=${encodeURIComponent(query)}&maxResults=5`).then(
          responseData => {
             setBooksData(responseData);
             setStatus('success');
