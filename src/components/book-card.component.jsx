@@ -1,15 +1,11 @@
 import * as React from 'react';
-// import BookDetails from './book-details.component';
 import { Link } from 'react-router-dom';
 import { BsBookmarkHeart } from 'react-icons/bs';
 import '../styles/book-card.styles.scss';
 
 const BookCard = ({ booksData }) => {
-   const [book, setBook] = React.useState(null);
-
-   function handleClick(book) {
-      console.log(book);
-      setBook(book);
+   function handleClick(d) {
+      console.log(d);
    }
 
    return (

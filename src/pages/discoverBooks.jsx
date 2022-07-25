@@ -3,7 +3,11 @@ import { client } from '../utils/api-client';
 import BookCard from '../components/book-card.component';
 import SearchBar from '../components/search-bar.component';
 
+// import { BooksDataContext } from '../context/booksData.context';
+
 const Discover = () => {
+   // const {  booksData, error, setQuery, setQueried } = React.useContext(BooksDataContext);
+
    const [status, setStatus] = React.useState('idle');
    const [booksData, setBooksData] = React.useState();
    const [error, setError] = React.useState();
